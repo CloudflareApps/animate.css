@@ -42,7 +42,7 @@
             },
             "animation": {
               "order": 3,
-              "title": "animation",
+              "title": "Animation",
               "type": "string",
               "enum": [
                 "bounce",

@@ -5,7 +5,7 @@
     (function(i){
 
       var els = document.querySelectorAll(elements[i].selector);
-      if (!els) continue;
+      if (!els) return;
 
       var cls = " animated";
       if (elements[i].loop) {

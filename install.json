@@ -3,7 +3,7 @@
     "body": [
       {
         "type": "style",
-        "src": "./css/hover.css"
+        "src": "./animate.css"
       },
       {
         "type": "script",

@@ -1,4 +1,7 @@
 (function(){
+  if (!document.querySelectorAll || !document.addEventListener)
+    return;
+
   var elements = INSTALL_OPTIONS.elements;
 
   for (var i=0; i < elements.length; i++){
@@ -15,9 +18,12 @@
 
       var trigger = function(j){
         els[j].className += cls;
-        setTimeout(function(){
-          reset(j);
-        }, 1000);
+
+        if (!elements[i].loop){
+          setTimeout(function(){
+            reset(j);
+          }, 1000);
+        }
       }
       var reset = function(j){
         els[j].className = els[j].className.replace(cls, '');
@@ -33,11 +39,11 @@
       case "hover":
         for (var j=0; j < els.length; j++){
           (function(j){
-            els[j].addEventHandler('mouseover', function(){
+            els[j].addEventListener('mouseover', function(){
               reset(j);
               trigger(j);
             });
-            els[j].addEventHandler('mouseout', function(){
+            els[j].addEventListener('mouseout', function(){
               reset(j);
             });
           })(j)
@@ -47,7 +53,7 @@
       case "click":
         for (var j=0; j < els.length; j++){
           (function(j){
-            els[j].addEventHandler('click', function(){
+            els[j].addEventListener('click', function(){
               reset(j);
               trigger(j);
             });

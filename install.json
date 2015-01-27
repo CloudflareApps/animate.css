@@ -1,6 +1,6 @@
 {
   "resources": {
-    "body": [
+    "head": [
       {
         "type": "style",
         "src": "./animate.css"

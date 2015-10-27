@@ -11,6 +11,14 @@
       }
     ]
   },
+  "preview": {
+    "handlers": [
+      {
+        "options": ["*"],
+        "execute": "EagerAnimate.setOptions(INSTALL_OPTIONS)"
+      }
+    ]
+  },
   "options": {
     "properties": {
       "elements": {
